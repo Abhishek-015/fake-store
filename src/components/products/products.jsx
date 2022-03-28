@@ -6,14 +6,11 @@ import { SORT_DATA } from "../../redux/actionTypes";
 
 const Products = () => {
   const data = useSelector((state) => state.data);
-  const [val,setVal] = useState("sort by price")
  
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    // e.preventDefault();
-    setVal(e.target.value)
-    console.log(e.target.value);
+
     if ((e.target.value === "Sort by asc")) {
       const sortAsc = [...data].sort((a, b) => a.price - b.price);
       console.log("sortAsc===>", sortAsc);
@@ -25,7 +22,6 @@ const Products = () => {
       );
     } else if(e.target.value==="Sort by desc") {
       const sortAsc = [...data].sort((a, b) => b.price - a.price);
-      console.log("==>", sortAsc);
       dispatch(
         sortData({
           type: SORT_DATA,
@@ -49,7 +45,6 @@ const Products = () => {
           </select>
         </div>
         <div className="row">
-          {/* <div className="md-col-4"> */}
           {data.map((el) => (
             <div className="card m-4" style={{ width: "18rem" }} key={el.id}>
               <img
@@ -74,7 +69,6 @@ const Products = () => {
               </div>
             </div>
           ))}
-          {/* </div> */}
         </div>
       </div>
     </div>
