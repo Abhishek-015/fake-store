@@ -68,7 +68,7 @@ const Products = () => {
                 </li>
               </ul>
               <div className="card-body">
-                <Link to={`/product/:${el.id}`} className="card-link">
+                <Link to={`/product/${el.id}`} >
                   View Product
                 </Link>
               </div>

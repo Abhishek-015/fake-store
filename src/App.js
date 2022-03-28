@@ -7,7 +7,7 @@ import { fetchData } from "./redux/actions";
 import { ADD_DATA } from "./redux/actionTypes";
 import Home from "./components/home/home";
 import Products from "./components/products/products";
-// import ProductCard from "./components/products/products";
+import ProductCard from "./components/card/productCard";
 import About from "./components/about/about";
 
 import Navbar from "./components/navbar/nav";
@@ -29,6 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductCard />} />
         </Routes>
       </div>
     </>
