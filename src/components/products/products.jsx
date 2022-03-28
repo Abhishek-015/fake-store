@@ -14,7 +14,7 @@ const Products = () => {
     // e.preventDefault();
     setVal(e.target.value)
     console.log(e.target.value);
-    if ((e.target.value = "Sort by asc")) {
+    if ((e.target.value === "Sort by asc")) {
       const sortAsc = [...data].sort((a, b) => a.price - b.price);
       console.log("sortAsc===>", sortAsc);
       dispatch(
@@ -23,7 +23,7 @@ const Products = () => {
           payload: sortAsc,
         })
       );
-    } else {
+    } else if(e.target.value==="Sort by desc") {
       const sortAsc = [...data].sort((a, b) => b.price - a.price);
       console.log("==>", sortAsc);
       dispatch(
@@ -45,7 +45,7 @@ const Products = () => {
            
             <option selected>Sort by Price</option>
             <option value="Sort by asc">Sort by asc</option>
-            <option value="sort by des">sort by des</option>
+            <option value="Sort by desc">sort by desc</option>
           </select>
         </div>
         <div className="row">
